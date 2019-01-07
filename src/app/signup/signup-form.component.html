@@ -1,0 +1,238 @@
+  <div>
+    <div class="pb-2 mt-4 mb-2 page-header">
+      <h2>SignUp Form</h2>
+    </div>
+    <div>
+      <form novalidate
+            class="form-res" 
+            (ngSubmit)='save()'
+            [formGroup]='signupForm'>
+        <!-- <div class="row"> -->
+          <div class="form-group form-inline input">
+            <label class="col-form-label" 
+                   for="firstNameId">First Name: </label>
+            <input class="form-control"
+                   id="firstNameId"
+                   placeholder="FirstName" 
+                   type="text"
+                   formControlName='firstName'
+                   [ngClass]="{'is-invalid': (signupForm.get('firstName').dirty || signupForm.get('firstName').touched) 
+                                              && !signupForm.get('firstName').valid}"/>
+              <span class="invalid-feedback">
+                <span *ngIf="signupForm.get('firstName').errors?.required">
+                  Please Enter your Name
+                </span>
+                <span *ngIf="signupForm.get('firstName').errors?.maxlength">
+                  Name should not exceed 12 characters
+                </span>
+              </span>
+          </div>
+          <div class="form-group form-inline input">
+            <label class="col-form-label"
+                   for="middleNameId">Middle Name: </label>
+            <input class="form-control"
+                   id="middleNameId"
+                   placeholder="MiddleName" 
+                   type="text"
+                   formControlName='middleName'
+                   [ngClass]="{'is-invalid': !signupForm.get('middleName').valid}"/>
+              <span class="invalid-feedback">
+                <span *ngIf="signupForm.get('middleName').errors?.maxlength">
+                  Name should not exceed 12 characters
+                </span>
+              </span>
+          </div>
+        <!-- </div> -->
+  
+        <!-- <div class="row"> -->
+            <div class="form-group form-inline input">
+              <label class="col-form-label" 
+                     for="lastNameId">Last Name: </label>
+              <!-- <label class="col-form-label col-md-2 col-sm-3 col-xs-4 visible-xs"  
+                     for="lastNameId">dsfsncjnjs: </label> -->
+              <input class="form-control"
+                     id="lastNameId"
+                     placeholder="LastName" 
+                     type="text"
+                     formControlName='lastName'
+                   [ngClass]="{'is-invalid':!signupForm.get('lastName').valid}"/>
+              <span class="invalid-feedback">
+                <span *ngIf="signupForm.get('lastName').errors?.maxlength">
+                  Name should not exceed 12 characters
+                </span>
+              </span>
+            </div>
+            <div class="form-group form-inline input ">
+              <label class="col-form-label "
+                     for="emailId">Email Id: </label>
+              <input class="form-control"
+                     id="emailId"
+                     placeholder="Email Id" 
+                     type="email"
+                     formControlName="email"
+                     [ngClass]="{'is-invalid': (signupForm.get('email').touched || signupForm.get('email').dirty)
+                                  && !signupForm.get('email').valid}"/>
+              <span class="invalid-feedback">
+                <span *ngIf="signupForm.get('email').errors?.required">
+                  Please enter your email id
+                </span>
+                <span *ngIf="signupForm.get('email').errors?.email">
+                  Please enter the valid email Id
+                </span>
+                <span *ngIf="signupForm.get('email').errors?.maxlength">
+                  Email shouldn't exceed 20 characters
+                </span>
+              </span>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+            <div class="form-group form-inline input">
+              <label class="col-form-label" 
+                     for="phoneNumberId">Phone Number:</label>
+              <input class="form-control"
+                     id="phoneNumberId"
+                     placeholder="Phone Number" 
+                     type="number"
+                     formControlName="phoneNumber"
+                     [ngClass]="{'is-invalid': (signupForm.get('phoneNumber').touched || signupForm.get('phoneNumber').dirty)
+                                  && !signupForm.get('phoneNumber').valid}"/>
+              <span class="invalid-feedback">
+                <span *ngIf="signupForm.get('phoneNumber').errors?.required">
+                  Please enter your email id
+                </span>
+                <span *ngIf="signupForm.get('phoneNumber').errors?.maxlength">
+                  Please enter the valid email Id
+                </span>
+              </span>
+            </div>
+            <div class="form-group form-inline input">
+              <label class="col-form-label"
+                     for="houseNumberId">House number: </label>
+              <input class="form-control"
+                     id="houseNumberId"
+                     placeholder="House Number" 
+                     type="text"
+                     formControlName="houseNumber"
+                     [ngClass]="{'is-invalid': !signupForm.get('houseNumber').valid}"/>
+              <span class="invalid-feedback">
+                <span *ngIf="signupForm.get('houseNumber').errors?.maxlength">
+                  House Number shouldn't exceed 10 characters
+                </span>
+              </span>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+            <div class="form-group form-inline input">
+              <label class="col-form-label" 
+                     for="laneId">lane: </label>
+              <input class="form-control"
+                     id="laneId"
+                     placeholder="Lane" 
+                     type="text"
+                     formControlName="lane"
+                     [ngClass]="{'is-invalid': !signupForm.get('lane').valid}"/>
+              <span class="invalid-feedback">
+                <span *ngIf="signupForm.get('lane').errors?.maxlength">
+                  lane shouldn't exceed 30 characters
+                </span>
+              </span>
+            </div>
+            <div class="form-group form-inline input">
+              <label class="col-form-label"
+                     for="areaId">Area: </label>
+              <input class="form-control"
+                     id="areaId"
+                     placeholder="Area" 
+                     type="text"
+                     formControlName="area"
+                     [ngClass]="{'is-invalid': !signupForm.get('area').valid}"/>
+              <span class="invalid-feedback">
+                <span *ngIf="signupForm.get('area').errors?.maxlength">
+                  Area shouldn't exceed 30 characters
+                </span>
+              </span>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+            <div class="form-group form-inline input">
+              <label class="col-form-label" 
+                     for="countryId">Country: </label>
+              <input class="form-control"
+                     id="countryId"
+                     placeholder="Country" 
+                     type="text" 
+                    formControlName='country'/>
+               <ul class="locationUL offset-md-3" for="countryId" *ngIf="signupForm.get('country').value.length > 0 && countryAppended">
+                  <li *ngFor="let country of (countries | locationFilter:signupForm.get('country').value)"
+                      (click)="selectedCountry($event)"
+                  >{{country}}</li>
+                </ul>            
+            </div>
+            <div class="form-group form-inline input ">
+                <label class="col-form-label" 
+                       for="stateId">State: </label>
+                <input class="form-control"
+                       id="stateId"
+                       placeholder="State" 
+                       type="text" 
+                       formControlName="state"
+                       [title]="signupForm.get('country').value.length > 0?
+                        'Select State' : 'Disabled until the country is selected'"/>
+                        <!-- [attr.disabled]="!signupForm.get('country').value.length > 0"/> -->
+                <!-- <span *ngFor="let state of (states | locationFilter:signupForm.get('state').value)">
+                    {{state}}
+                </span> -->
+                <ul class="locationUL offset-md-3" *ngIf="signupForm.get('state').value.length > 0 && stateAppended">
+                  <li *ngFor="let state of (states | locationFilter:signupForm.get('state').value)"
+                      (click)="selectedState($event)"
+                  >{{state}}</li>
+                </ul>  
+              </div>
+        <!-- </div> -->
+        <!-- <div class="row"> -->
+            <div class="form-group form-inline input">
+                <label class="col-form-label"
+                       for="cityId">City: </label>
+                <input class="form-control"
+                       id="cityId"
+                       placeholder="City" 
+                       type="text"
+                       formControlName="city"/>
+                <!-- <span *ngFor="let city of (cities | locationFilter:signupForm.get('city').value)">
+                        {{city}}
+                </span> -->
+                <ul class="locationUL offset-md-3" *ngIf="signupForm.get('city').value.length > 0 && cityAppended">
+                  <li *ngFor="let city of (cities | locationFilter:signupForm.get('city').value)"
+                  (click)="selectedCity($event)">{{city}}</li>
+                </ul>  
+            </div>
+            <div class="form-group form-inline input">
+              <label class="col-form-label"
+                     for="zipId">Zip: </label>
+              <input class="form-control"
+                     id="zipId"
+                     placeholder="Zip" 
+                     type="text"
+                     formControlName="zip"
+                     [ngClass]="{'is-invalid': !signupForm.get('zip').valid}"/>
+              <span class="invalid-feedback">
+                <span *ngIf="signupForm.get('zip').errors?.maxlength">
+                 Zip shouldn't exceed 6 characters
+                </span>
+              </span>
+            </div>
+        <!-- </div> -->
+  
+        <div class="form-group ">
+          <div class="offset-md-9 col-md-3">
+            <button class="form-control btn btn-primary"
+                    type="submit"
+                    [title]="signupForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                    [disabled]="!signupForm.valid">SignUp</button>
+            </div>
+          </div>
+  
+      </form>
+    </div>
+  
+  </div>

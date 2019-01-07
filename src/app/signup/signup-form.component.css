@@ -1,0 +1,91 @@
+ /* .form-control.ng-dirty.ng-valid{
+    border: 3px solid orchid;
+} */
+.form-control.ng-dirty.ng-valid.ng-touched{
+    border: 3px solid green;
+} 
+
+/* .form-control.ng-pending{
+    border: 3px solid green;
+} */
+
+
+
+.locationUL {
+     list-style-type: none;
+    border: 1px solid red; 
+    width: 70%;
+    /* position: absolute; */
+    /* right: 15px; */
+    z-index: 1;
+    background-color: #ece7e2; 
+}
+li{
+    margin-left: -10%;
+    padding-left: 10%;
+}
+.locationUL li:hover{
+    background-color: aqua;
+}
+
+.page-header{
+    text-align: center;
+  }
+  
+  @media only screen and (min-width: 600px) {
+  .form-res > .form-group{
+    width: 50%;
+    float: left;
+    min-height: px;
+  }
+  .form-res > .form-group > label{
+      width: 25%;
+    }
+  .form-res > .form-group > input{
+      width: 70%;
+    }
+  } 
+
+  @media only screen and (max-width: 600px) {
+    .locationUL{
+        width:100%   
+    }
+  } 
+
+  .input{
+    position: relative;
+  }
+  input{
+    margin-top: 2%
+  }
+  .input > .invalid-feedback {
+    position: absolute;
+    bottom:-20px;
+    left:10%;
+   /*  width:75%;
+    border:1px solid #eee;
+    background-color: white; */
+    z-index: 2;
+  }
+ 
+  @media screen and (min-width: 0px) and (max-width: 400px) {
+      label{ display: none; }  /* show it on large screen */
+    }
+    @media screen and (min-width: 401px) and (max-width: 1024px) {
+      label{ display: block; }   /* hide it small screens */
+    }  
+  
+/*#countryId:empty~ul {
+    display: none;
+} 
+#countryId:not(:empty)~ul {
+    display: block;
+} */
+
+
+
+/* #countryId~ul~li{
+    border: 1px solid black;
+    width: 100%;
+    
+} */
