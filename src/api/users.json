@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "firstName": "vinay",
+      "middleName": "",
+      "lastName": "",
+      "email": "bviah@mmcs.com",
+      "phoneNumber": 23456,
+      "houseNumber": "",
+      "lane": "",
+      "area": "",
+      "country": "",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "id": 1
+    },
+    {
+      "name": "test",
+      "id": 2
+    },
+    {
+      "firstName": "vinay",
+      "middleName": "",
+      "lastName": "",
+      "email": "bviany@er.com",
+      "phoneNumber": 234567,
+      "houseNumber": "",
+      "lane": "",
+      "area": "",
+      "country": "India",
+      "city": "Kuppam",
+      "state": "Andhra Pradesh",
+      "zip": "3456",
+      "id": 3
+    },
+    {
+      "firstName": "vinay",
+      "middleName": "",
+      "lastName": "",
+      "email": "bviah@mmcs.com",
+      "phoneNumber": 43567,
+      "houseNumber": "",
+      "lane": "",
+      "area": "",
+      "country": "",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "id": 4
+    }
+  ]
+}

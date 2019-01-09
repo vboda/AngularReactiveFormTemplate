@@ -17,7 +17,8 @@
                    type="text"
                    formControlName='firstName'
                    [ngClass]="{'is-invalid': (signupForm.get('firstName').dirty || signupForm.get('firstName').touched) 
-                                              && !signupForm.get('firstName').valid}"/>
+                                              && !signupForm.get('firstName').valid}"
+                    autofocus/>
               <span class="invalid-feedback">
                 <span *ngIf="signupForm.get('firstName').errors?.required">
                   Please Enter your Name
@@ -228,7 +229,8 @@
             <button class="form-control btn btn-primary"
                     type="submit"
                     [title]="signupForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
-                    [disabled]="!signupForm.valid">SignUp</button>
+                    [disabled]="!signupForm.valid"
+                    >SignUp</button>
             </div>
           </div>
   

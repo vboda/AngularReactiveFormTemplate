@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { tap, catchError,map, filter} from 'rxjs/operators';
 import { ILocation } from 'src/api/location.model';
+import { SignupForm } from './signup-form';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,14 @@ export class SignupFormService {
       map(data=>data),
       catchError(this.handleError)
     );
+  }
+
+  addUser(user:SignupForm):Observable<SignupForm>{
+    return this.http.post<SignupForm>('http://localhost:5000/users',user,{
+      headers: new HttpHeaders({
+        'Content-Type':'application/json'
+      })
+    })
   }
   private handleError(err) {
     // in a real world app, we may send the server to some remote logging infrastructure

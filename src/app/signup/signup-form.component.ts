@@ -3,7 +3,8 @@ import { FormBuilder, Validators, FormGroup, ValidatorFn, AbstractControl } from
 import { SignupFormService } from './signup-form.service';
 import { Observable, of } from 'rxjs';
 import { ILocation } from 'src/api/location.model';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
+import { SignupForm } from './signup-form';
 
 
 @Component({
@@ -22,10 +23,12 @@ export class SignupFormComponent implements OnInit {
   filteredCountries: string[];
   states:string[]=[];
   cities: {}[];
+  form:SignupForm
 
   constructor(private fb: FormBuilder,
      private signupService:SignupFormService,
-     private route:ActivatedRoute) { }
+     private route:ActivatedRoute,
+     private router:Router) { }
   ngOnInit() {
 
     this.signupForm = this.fb.group({
@@ -127,6 +130,15 @@ export class SignupFormComponent implements OnInit {
   console.log(this.cities);
   }
   save(): void {
-    console.log(this.signupForm);
+    let newUser:SignupForm = <SignupForm> this.signupForm.value;
+    // newUser.userID =0;
+    // console.log(newUser);
+    this.signupService.addUser(newUser)
+    .subscribe(
+      (data:SignupForm)=>console.log(data),
+      (err:any)=>console.error(err)
+    )
+    // this.router.navigate(['/success'])
+    
   }
 }
